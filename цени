@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ціни</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      text-align: center;
+      padding-top: 80px;
+    }
+
+    h1 {
+      font-size: 40px;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 20px;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    #prices {
+      display: none;
+      margin: 30px auto;
+      max-width: 350px;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px #aaa;
+    }
+
+    .price {
+      font-size: 24px;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .price:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Наші ціни</h1>
+
+  <button onclick="showPrices()">Ціни</button>
+
+  <div id="prices">
+    <div class="price">Царапка — <b>5 €</b></div>
+    <div class="price">Винаградка — <b>10 €</b></div>
+  </div>
+
+  <script>
+    function showPrices() {
+      const prices = document.getElementById("prices");
+
+      if (prices.style.display === "block") {
+        prices.style.display = "none";
+      } else {
+        prices.style.display = "block";
+      }
+    }
+  </script>
+
+</body>
+</html>
