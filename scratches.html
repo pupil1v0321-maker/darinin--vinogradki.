@@ -72,3 +72,218 @@
 
 </body>
 </html>
+Отримав! 👍 Ось фінальний код з обома посиланнями:
+
+```html
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Царапки</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Зелений напис "Царапки" */
+        .title {
+            color: #00c853;
+            font-size: 64px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            transition: transform 0.2s, text-shadow 0.2s;
+            user-select: none;
+        }
+
+        .title:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 15px rgba(0, 200, 83, 0.7);
+        }
+
+        /* Синє полотно */
+        .canvas {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: white;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .canvas.active {
+            display: flex;
+        }
+
+        .canvas h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #ffffff;
+        }
+
+        .canvas p {
+            font-size: 24px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+        /* Кнопка закриття */
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .close-btn:hover {
+            transform: rotate(90deg);
+        }
+
+        /* Кнопка "Соцмережі авторів" */
+        .social-btn {
+            background-color: #00c853;
+            color: white;
+            border: none;
+            padding: 15px 35px;
+            font-size: 20px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .social-btn:hover {
+            background-color: #00e676;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Вікно з посиланнями */
+        .social-links {
+            display: none;
+            margin-top: 25px;
+            flex-direction: column;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px 40px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-links.active {
+            display: flex;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 12px 25px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: white;
+            color: #1e3c72;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Зелений напис -->
+    <h1 class="title" onclick="openCanvas()">Царапки</h1>
+
+    <!-- Синє полотно -->
+    <div class="canvas" id="canvas">
+        <button class="close-btn" onclick="closeCanvas()">✕</button>
+        <h2>Наші царапки</h2>
+        <p>Наші царапки зроблені з салфетки та цукру 🍬</p>
+
+        <!-- Кнопка соцмереж -->
+        <button class="social-btn" onclick="toggleSocial()">📱 Соцмережі авторів</button>
+
+        <!-- Дві силки -->
+        <div class="social-links" id="socialLinks">
+            <a href="https://www.youtube.com/@Plat-ua" target="_blank">▶️ YouTube — Plat-ua</a>
+            <a href="https://www.tiktok.com/@melocotonius" target="_blank">🎵 TikTok — melocotonius</a>
+        </div>
+    </div>
+
+    <script>
+        function openCanvas() {
+            document.getElementById('canvas').classList.add('active');
+        }
+
+        function closeCanvas() {
+            document.getElementById('canvas').classList.remove('active');
+            document.getElementById('socialLinks').classList.remove('active');
+        }
+
+        function toggleSocial() {
+            document.getElementById('socialLinks').classList.toggle('active');
+        }
+
+        // Закриття по Escape
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeCanvas();
+            }
+        });
+    </script>
+
+</body>
+</html>
+```
+
+✅ Готово! Ось що вийшло:
+
+Кнопка Посилання
+▶️ YouTube — Plat-ua https://www.youtube.com/@Plat-ua
+🎵 TikTok — melocotonius https://www.tiktok.com/@melocotonius
+
+🚀 Як завантажити на GitHub Pages:
+
+```bash
+# У папці з файлом index.html
+git init
+git add index.html
+git commit -m "Царапки з посиланнями на авторів"
+git branch -M main
+git remote add origin https://github.com/ТВІЙ_НІК/царапки.git
+git push -u origin main
+```
+
+Потім: Settings → Pages → Branch: main → Save
+
+Сайт буде тут: https://ТВІЙ_НІК.github.io/царапки/
+
+Якщо хочеш ще щось додати (анімації, фото царапок, музику) — кажи! 🎨
